@@ -25,7 +25,27 @@ fluidPage(
                     c("All",
                       unique(as.character(mpg$cyl))))
     )
+    
   ),
+  
+  
+  sidebarLayout(
+    
+    sidebarPanel(
+      
+      
+      #Download Button
+      downloadButton("downloadData", "Download")#,
+      
+      
+      #selectInput("mpg2", "download", choices = c("man", "trans", "cyl"))
+    ),
+
+    mainPanel()
+  ),
+  
+  
+  
   # Create a new row for the table.
   fluidRow(
     DT::dataTableOutput("table")
